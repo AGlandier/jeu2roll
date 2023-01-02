@@ -13,11 +13,6 @@ such as character creation (following the official rules of the game).
 - Front-end : Angular framework
 - Design : Bootstrap 5
 
-## Screenshots
-<img src="https://github.com/AGlandier/jeu2roll/blob/master/documentation/images/home.PNG"/> <img src="https://github.com/AGlandier/jeu2roll/blob/master/documentation/images/profil.PNG"/>
-<img src="https://github.com/AGlandier/jeu2roll/blob/master/documentation/images/personnages.PNG"/> <img src="https://github.com/AGlandier/jeu2roll/blob/master/documentation/images/creer_personnage.PNG"/>
-<img src="https://github.com/AGlandier/jeu2roll/blob/master/documentation/images/creer_actualite.PNG"/>
-
 ## Install and run the project
   Since the project works only locally, there's a few manipulation to do before running it.
   
@@ -38,3 +33,9 @@ such as character creation (following the official rules of the game).
   - Dynamic dice roller
   - JS alignment selector for character creation
   - Room creation to view maps/dicerolls while playing
+  
+## Screenshots
+<img src="https://github.com/AGlandier/jeu2roll/blob/master/documentation/images/home.PNG"/> <img src="https://github.com/AGlandier/jeu2roll/blob/master/documentation/images/profil.PNG"/>
+<img src="https://github.com/AGlandier/jeu2roll/blob/master/documentation/images/personnages.PNG"/> <img src="https://github.com/AGlandier/jeu2roll/blob/master/documentation/images/creer_personnage.PNG"/>
+<img src="https://github.com/AGlandier/jeu2roll/blob/master/documentation/images/creer_actualite.PNG"/>
+
