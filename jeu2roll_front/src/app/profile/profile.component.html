@@ -1,0 +1,34 @@
+<p></p>
+<p></p>
+<div class = "mb-3 card" style = "width: 80%; left: 10%;">
+    <h5 class="card-title text-center">Mon profil</h5>
+    <div class = "mb-2 d-flex align-items-start">
+    <div class="col">
+        <div class="card-body">
+            <p class="card-text">Nom d'utilisateur : {{user.login}}</p>
+            <p class="card-text">Adresse email : {{user.email}}</p>
+            <p class="card-text">Date de naissance : {{user.naissance | formatDate}}</p>
+        </div>
+    </div>
+
+    <div class = "col"></div>
+
+    <div class="col">
+        <img src = "{{user.photo}}" class = "rounded-circle" style = "width: 150px;"/>
+    </div>
+</div>    
+</div>
+<button *ngIf = "admin" class = "btn btn-primary" style = "width: 30%; left: 35%; position: relative;" (click) = "setAdminTrue();">MODE ADMIN</button>
+<p></p>
+<div *ngIf = "displayAdmin">
+    <p class = "text-center text-danger"> /!\ Les actions ci-dessous on un effet permanent sur l'application. Prenez vos précautions.</p>
+    <div class = "row mb-4" >
+        <div class = "col">
+            <button (click)="goActu()" class = "btn btn-primary" style = "position: relative; width: 50%; left: 25%;">Créer une actu</button>
+        </div>
+        <div class = "col">
+            <button (click)="goActu()" class = "btn btn-primary" style = "position: relative; width: 50%; left: 25%;">Demandes de publication</button>
+        </div>
+        
+    </div>
+</div>

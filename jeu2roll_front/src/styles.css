@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+
+.fixed_bubble {
+    position: absolute;
+    z-index: 2;
+    left:5%;
+    top: 5%;
+}

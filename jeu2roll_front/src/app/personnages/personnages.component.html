@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarExample01"
+        aria-controls="navbarExample01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarExample01">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="creerperso">Créer un personnage</a>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button
+          class="btn btn-primary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Trier par
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Popularité</a></li>
+          <li><a class="dropdown-item" href="#">Nouveauté</a></li>
+          <li><a class="dropdown-item" href="#">Ancienneté</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<p></p>
+<p></p>
+    <div *ngFor = "let a of persos" class="card mb-3 card-center" style="max-width: 50%; max-height: 300px;">
+        <div class="row g-0">
+          <div class="col-md-4"  style="overflow: hidden;">
+            <img
+              src="{{a.illu}}"
+              class="img-perso"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"> {{a.nom_perso}} {{a.race}} {{a.classe}} {{a.alignement}}</h5>
+              <p class="card-text">
+                {{a.histoire}}
+              </p>
+              <div class="d-flex align-items-start mb-2">
+                <div class="card-text col">
+                    <small class="text-muted">par {{a.user.login}}</small> <br>
+                    <small class="text-muted">le {{a.date  | formatDate}}</small>
+                </div>
+                <div>
+                    <p></p>
+                    <button class="btn btn-primary">Details</button>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+

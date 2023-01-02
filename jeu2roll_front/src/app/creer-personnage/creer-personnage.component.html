@@ -1,0 +1,197 @@
+<p></p>
+<p></p>
+<p></p>
+<form>
+    
+    <div class = "card" style = "width: 70%; left: 15%; padding: 10px;">
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <input type="text" class="form-control" />
+                    <label class="form-label"> Nom du personnage </label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-outline">
+                    <input type="number" name = "input" min = 1 max = 20 class="form-control"  id = "niveau"/>
+                    <label class="form-label"> Niveau </label>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="step1">
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="form-outline">
+                        <select  type="text" class="form-select" id = "selectClasse">
+                            <option selected>Classe</option>
+                            <option *ngFor = "let a of classes"> {{a}} </option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <select  type="text" class="form-select">
+                                <option selected>Historique</option>
+                                <option *ngFor = "let a of historiques"> {{a}} </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                        <input type="text" id="form3Example2" class="form-control" />
+                        <label class="form-label" for="form3Example2">Nom du joueur</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-6">
+                <div class="col">
+                    <div class="form-outline">
+                        <select  type="text" class="form-select" id = "selectRace">
+                            <option selected>Race</option>
+                            <option *ngFor = "let a of races"> {{a}} </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                <div class="form-outline">
+                    <input type="text" id="form3Example2" class="form-control" />
+                    <label class="form-label" for="form3Example2">Alignement</label>
+                </div>
+                </div>
+                <div class="col">
+                    <div class="form-outline">
+                    <input type="number" id="form3Example2" class="form-control"/>
+                    <label class="form-label" for="form3Example2">Experience</label>
+                    </div>
+                </div>
+            </div>
+            <button class = "btn btn-primary" style = "width : 30%; left: 35%; position: relative;" (click)=" setClasseActive(); setRaceActive(); setValidTrue(1);"> Valider et continuer </button>
+            <p></p>
+            <div *ngIf = "valid1">
+                <div class="row mb-6">
+                    <div class="col">
+                        <div class="">
+                            <label class="form-label">Force</label>
+                            <input  type="number" class="form-control" value="{{roll[0]}}"/>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label class="form-label">Dext</label>
+                            <input  type="number" class="form-control" value="{{roll[1]}}"/>
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label class="form-label">Const</label>
+                            <input  type="number" class="form-control" value="{{roll[2]}}"/>
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label class="form-label">Intel</label>
+                            <input  type="number" class="form-control" value="{{roll[3]}}"/>
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label class="form-label">Sagesse</label>
+                            <input  type="number" class="form-control" value="{{roll[4]}}"/>
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label class="form-label">Char</label>
+                            <input  type="number" class="form-control" value="{{roll[6]}}"/>
+                            
+                        </div>
+                    </div>
+                </div>
+                <button class = "btn btn-primary" style = "width : 30%; left : 35%; position: relative;" (click)="rollCaracs();"> Roll </button>
+                <p></p>
+                <div class = "row mb-4">
+                    <div class = "col">
+                        <div>
+                            <label class="form-label">Jet de sauvegarde #1</label>
+                            <select  type="text" class="form-select" id = "selectClasse">
+                                <option selected>{{classeActive.jds[0]}}</option>
+                                <option *ngFor = "let a of caracs"> {{a}} </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class = "col">
+                        <div>
+                            <label class="form-label">Jet de sauvegarde #2</label>
+                            <select  type="text" class="form-select" id = "selectClasse">
+                                <option selected>{{classeActive.jds[1]}}</option>
+                                <option *ngFor = "let a of caracs"> {{a}} </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-6">
+                    <div class = "col text-center" style = "position: relative; top: 35px;">
+                        <button class = "btn btn-primary" (click) = "rollLife();"> Roll </button>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <label class="form-label">Points de Vie</label>
+                            <input  type="number" class="form-control" value = {{vie}}/>
+                        </div>
+                    </div>
+                    <div class = "col" style = "position: relative; top: 40px;">
+                        <input class="form-check-input" type="checkbox" id="mean" />
+                        <label class="form-check-label"> Utiliser une valeur moyenne ?</label>
+                    </div>
+                </div>
+                <div class = "row mb-4">
+                    <div class = "col" >
+                        <label class="form-label">CA</label>
+                        <input  type="number" class = "form-control" disabled/>
+                    </div>
+                    <div class = "col">
+                        <label class="form-label">Initiative</label>
+                        <input  type="number" class = "form-control" value = "{{roll[1]}}" disabled/>
+                    </div>
+                    <div class = "col">
+                        <label class="form-label">Vitesse</label>
+                        <input  type="number" step = "0.1" class = "form-control" value = "{{raceActive.vitesse}}"/>
+                    </div>
+                </div>
+                <button class = "btn btn-primary" style = "width : 30%; left : 35%; position: relative;" (click)="stepChange(1);"> Valider et continuer </button>
+            </div>
+        </div>
+        <p></p>
+        <div *ngIf="step2">
+            <button class = "btn btn-primary" style = "width: 20%; left: 40%; position: relative;" (click)="stepChange(2);"> &lt; Précédent </button>
+            <p></p>
+            <div>
+                <label class="form-label">Competences (ctrl + click pour en sélectionner plusieurs)</label>
+                <select  type="text" class="form-select" multiple>
+                    <option *ngFor = "let a of competences"> {{a.nom}} ({{a.caracteristique}}) </option>
+                </select>
+            </div>
+            <p></p>
+            <div>
+                <label class="form-label">Armes (ctrl + click pour en sélectionner plusieurs)</label>
+                <select  type="text" class="form-select" multiple>
+                    <option *ngFor = "let a of armes"> {{a.nom}} ({{a.degats}}) </option>
+                </select>
+            </div>
+            <p></p>
+            <div>
+                <label class="form-label">Armures (ctrl + click pour en sélectionner plusieurs)</label>
+                <select  type="text" class="form-select" multiple>
+                    <option *ngFor = "let a of armures"> {{a.nom}} (CA : {{a.ca}}) </option>
+                </select>
+            </div>
+        </div>
+
+</div>
+    
+
+</form>

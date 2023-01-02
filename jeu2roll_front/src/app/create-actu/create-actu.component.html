@@ -1,0 +1,68 @@
+<p></p>
+<p></p>
+<div class = "card form-card top-5p">
+    <div class = "card-body">
+        <h5 class="card-title text-center">Nouvelle Actu</h5>
+        
+        <form #actu = "ngForm" (ngSubmit)="createActu(actu.value)">
+            <div class = row>
+                <div class = col>
+                    <div class="">
+                        <label class="form-label" for="form1">Titre</label>
+                        <input type="text" name = "login" id="titre" name = "titre" class="form-control" required ngModel = "" #loginAction = "ngModel"/>
+                        <p></p>
+                    </div>
+                    <div class="">
+                        <label class="form-label" for="form4">Illustration (url de l'image)</label>
+                        <input type="text" name = "mdp" id="image" name = "image" class="form-control" required value = "{{imgShow}}"/>
+                        <p></p>
+                    </div>
+                    <button class = "btn btn-primary" style = "width: 30%; left: 35%; position: relative;" (click)="setImg();" type = "button"> Actualiser l'image </button>
+                    <p></p>
+                </div>
+                <div class = col>
+                    <img src="{{imgShow}}" style = "position: relative; height: 170px; left: 20%;">
+                </div>
+            </div>
+            <div class="">
+                <label class="form-label" >Contenu</label>
+                <textarea class="form-control" rows="6" id = "contenu" name = "contenu"></textarea>
+            </div>
+            <p></p>
+            <div class = row>
+                <div class = "col">
+                    <button class = "btn btn-primary" style = "width: 40%; left: 55%; position: relative;" (click)="showPrevisu();" type = "button">Prévisualiser</button>
+                </div>
+                <div class = "col">
+                    <button type="submit" class="btn btn-primary" style = "width: 40%; left: 5%; position: relative;">Créer</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<p></p>
+<p></p>
+<div class="card top-5p" style="left: 25%; max-width: 50%; max-height: 300px;" *ngIf="previsu">
+    <div class="row g-0">
+        <div class="col-md-4"  style="overflow: hidden;">
+        <img
+            src="{{imgShow}}"
+            class="rounded-start img-full"
+        />
+        </div>
+        <div class="col-md-8">
+        <div class="card-body">
+            <h5 class="card-title"> {{titre}} </h5>
+            <p class="card-text">
+                {{contenu}}
+            </p>
+            <p class="card-text">
+            <small class="text-muted">Auteur : {{nom}}</small> <br>
+            <small class="text-muted">le {{date | formatDate}}</small>
+            </p>
+        </div>
+        </div>
+    </div>
+</div>
+<p></p>
+<p></p>

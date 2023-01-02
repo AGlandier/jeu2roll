@@ -1,0 +1,11 @@
+.card-center{
+    left: 25%;
+}
+
+.img-perso{
+    position: relative;
+    border-radius: 50%;
+    height: 200px;
+    left : 15%;
+    top: 20px;
+}
