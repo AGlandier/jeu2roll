@@ -15,6 +15,7 @@ import { PersonnagesComponent } from './personnages/personnages.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormatmdpPipe } from 'src/pipes/formatMdp.pipe';
 import { CreateActuComponent } from './create-actu/create-actu.component';
+import { SocialComponent } from './social/social.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CreateActuComponent } from './create-actu/create-actu.component';
     CreerPersonnageComponent,
     PersonnagesComponent,
     ProfileComponent,
-    CreateActuComponent
+    CreateActuComponent,
+    SocialComponent
   ],
   imports: [
     BrowserModule,
